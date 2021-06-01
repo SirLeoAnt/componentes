@@ -150,8 +150,8 @@ export class AlertPage implements OnInit {
           }
         }, {
           text: 'Guardar',
-          handler: () => {
-            console.log('Confirm Ok');
+          handler: ( data:any ) => {
+            console.log('Informacion=>', data);
           }
         }
       ]

@@ -18,15 +18,14 @@ export class ActionSheetPage implements OnInit {
   }
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Encabezado',
       backdropDismiss: false,
-      mode: 'ios',
       buttons: [{
-        text: 'Delete',
+        text: 'Eliminar',
         role: 'destructive',
         icon: 'trash-outline',
         handler: () => {
-          console.log('Delete clicked');
+          console.log('Hola mundo');
         }
       }, {
         text: 'Share',

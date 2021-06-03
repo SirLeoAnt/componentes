@@ -19,9 +19,11 @@ export class AlertPage implements OnInit {
     const alert = await this.alertController.create({
       mode: 'ios',
       backdropDismiss: false,
-      header: 'Alerta',
+      // contendio del alert
+      header: 'Aqui va el titulo',
       subHeader: 'SubTitulo',
       message: 'Este es el mensaje del alerta.',
+      // botones
       buttons: ['Aceptar']
     });
 
@@ -60,12 +62,13 @@ export class AlertPage implements OnInit {
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {
-            console.log('fue cancelado');
+            console.log('fue cancelado', blah);
           }
         }, {
           text: 'Confirmar',
           handler: () => {
             console.log('Fue confirmado');
+            this.onClick();
           }
         }
       ]
@@ -112,7 +115,7 @@ export class AlertPage implements OnInit {
           name: 'Fecha',
           type: 'date',
           min: '2021-05-01',
-          max: '2021-05-05'
+          max: '2021-05-31'
         },
         // input date without min nor max
         {
@@ -120,7 +123,7 @@ export class AlertPage implements OnInit {
           type: 'date'
         },
         {
-          name: 'name6',
+          name: 'Numero',
           type: 'number',
           min: -5,
           max: 10
@@ -135,7 +138,7 @@ export class AlertPage implements OnInit {
           placeholder: 'Advanced Attributes',
           cssClass: 'specialClass',
           attributes: {
-            maxlength: 4,
+            maxlength: 8,
             inputmode: 'decimal'
           }
         }
@@ -150,7 +153,7 @@ export class AlertPage implements OnInit {
           }
         }, {
           text: 'Guardar',
-          handler: ( data:any ) => {
+          handler: ( data: any ) => {
             console.log('Informacion=>', data);
           }
         }
@@ -235,8 +238,8 @@ export class AlertPage implements OnInit {
           }
         }, {
           text: 'Aceptar',
-          handler: () => {
-            console.log('Confirm Ok');
+          handler: ( d: any) => {
+            console.log('Confirm Ok', d);
           }
         }
       ]
